@@ -11,7 +11,7 @@ CREATE TABLE category (
     category_name VARCHAR(50) NOT NULL,
     PRIMARY KEY (id)
 );
---===========CREATE A TABLE TO HOLD THE PRODUCT==============--
+-- ===========CREATE A TABLE TO HOLD THE PRODUCT==============--
 CREATE TABLE product (
     id INT NOT NULL AUTO_INCREMENT,
     product_name VARCHAR(50) NOT NULL,
@@ -20,13 +20,13 @@ CREATE TABLE product (
     FOREIGN KEY(category_id) REFERENCES category(id) ON DELETE CASCADE,
     PRIMARY KEY(id)
 );
---===========CREATE TABLE TO HOLD THE 'TAG' INFORMATION============--
+-- ===========CREATE TABLE TO HOLD THE 'TAG' INFORMATION============--
 CREATE TABLE tag (
     id INT NOT NULL AUTO_INCREMENT,
     tag_name VARCHAR(50),
     PRIMARY KEY(id)
 );
---==============CREATE A TABLE TO HOLD THE 'PRODUCT_TAG' INFORMATION================--
+-- ==============CREATE A TABLE TO HOLD THE 'PRODUCT_TAG' INFORMATION================--
 CREATE TABLE product_tag (
     id INT NOT NULL AUTO_INCREMENT,
     FOREIGN KEY(tag_id) REFERENCES tag(id) ON DELETE CASCADE,
